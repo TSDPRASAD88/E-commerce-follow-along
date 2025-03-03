@@ -18,3 +18,13 @@ During this session, we covered the basics of setting up a project repository an
 ## Tech Stack
 - **Frontend**: React, Redux, CSS, Vite
 - **Backend**: Node.js
+
+###
+
+* Completed foundation for E-commerce application
+
+## Milestone 2
+
+* separate folders for frontend and bavkend
+* A functional login page in the frontend
+* Completed setting for tailwind css
