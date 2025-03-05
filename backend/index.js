@@ -1,5 +1,5 @@
 const express = require('express');
-
+const userRouter=require("./controller/userRouter");
 const app = express();
 const connect = require('connect');
 connect();
@@ -10,6 +10,9 @@ app.get('/',(req,res)=>{
         res.status(200).send({message: "something went wrong"})
     }
 })
+
+app.use("/user",userRouter)
+
 
 app.listen(8000,async()=>{
     try{

@@ -35,3 +35,9 @@ During this session, we covered the basics of setting up a project repository an
 * Organized the backend folder structure for scalability
 * connected the server to the MongoDB using mongoose
 * Implemented error-handling middleware for API stability
+
+
+## Milestone 4:user management & file handling
+* created the user model in mongoose to define the user data structure   
+* Developed the user controller to manage user authentication(signup,login).
+* Implemented multer for file handling ,allowing user profile and product image   uploads                                                     
