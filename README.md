@@ -28,3 +28,10 @@ During this session, we covered the basics of setting up a project repository an
 * separate folders for frontend and bavkend
 * A functional login page in the frontend
 * Completed setting for tailwind css
+
+
+## Milestone 3:Backend configuration & database connection
+
+* Organized the backend folder structure for scalability
+* connected the server to the MongoDB using mongoose
+* Implemented error-handling middleware for API stability

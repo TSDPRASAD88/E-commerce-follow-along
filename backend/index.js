@@ -1,19 +1,21 @@
-const express = require("express");
+const express = require('express');
 
-const app=express();
-
-app.get("/",(request,response)=>{
+const app = express();
+const connect = require('connect');
+connect();
+app.get('/',(req,res)=>{
     try{
-      response.status(200).send({msg:"This is E-commerce code along"})
-    }catch(error){
-        response.status(500).send({message:"error occured"})
+        res.status(200).send({message:"This is Ecommerce - code - along - Backend"})
+    }catch(err){
+        res.status(200).send({message: "something went wrong"})
     }
 })
 
-app.listen(3000,()=>{
+app.listen(8000,async()=>{
     try{
-        console.log("Connected to server succsefully");
-    } catch(error) {
-       console.log(error);
+      await connect();
+      console.log('server is connected');
+    }catch(err){
+    console.log('server is not connected', error);
     }
 })
