@@ -41,3 +41,7 @@ During this session, we covered the basics of setting up a project repository an
 * created the user model in mongoose to define the user data structure   
 * Developed the user controller to manage user authentication(signup,login).
 * Implemented multer for file handling ,allowing user profile and product image   uploads                                                     
+
+## Milestone 5:user Registration & file handling
+* created the "signup page"  in react and added code for signup backend also.
+* Added the "Signup page" validation in (signup,login).
