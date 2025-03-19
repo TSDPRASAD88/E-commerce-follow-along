@@ -52,6 +52,27 @@ During this session, we covered the basics of setting up a project repository an
 
 
 
+
+
+# Milestone 7
+
+  - created all the requirements *login authentication* in the backend file.
+  - Here we are first getting the hashed password from db searched by email and then comparing the input body password with hashed password by compare method in bcrypts.
+
+  # Milestone 8
+  
+   - added the *product page* in the frotend as a home page.
+   - and added the designs for products page and home page with css for both.
+
+
+
+
 ## Milestone 9:created form for product upload
 * created the Addproduct page in frontend
 * Added form validation in Addproducts page.
+
+## Milestone 10:created schema product upload
+* created the productModel page in backend.
+* created the productRouter page in backend.
+* handled file uploads by multer inside middlewares multer.
+
