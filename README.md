@@ -49,3 +49,9 @@ During this session, we covered the basics of setting up a project repository an
 ## Milestone 6:password hashing by using bcryptjs
 * added the password encryption in backend signup page 
 * added comparision for checking password correct or not in login backend.
+
+
+
+## Milestone 9:created form for product upload
+* created the Addproduct page in frontend
+* Added form validation in Addproducts page.
