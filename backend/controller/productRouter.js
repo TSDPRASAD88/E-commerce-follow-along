@@ -18,7 +18,14 @@ try {
         return res.status(404).send({msg:"please fill all fields"});
     }
 
-    const images=req.file;
+    const images=req.files;
+
+    const imageLinkArray=[];
+    images.forEach(ele => {
+        console.log(ele);
+    });
+
+    return res.status(200).send({msg:"product added successfully"});
     
 
 } catch (error) {

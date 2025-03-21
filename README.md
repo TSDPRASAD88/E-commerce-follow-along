@@ -76,3 +76,8 @@ During this session, we covered the basics of setting up a project repository an
 * created the productRouter page in backend.
 * handled file uploads by multer inside middlewares multer.
 
+# Milestone 11
+
+   - created **Home page** for dynamic products presenatation.
+   - added the **backend** part for handeling products(created endpoint to get products).
+   - handeled file uploads by multer inside middleware multer

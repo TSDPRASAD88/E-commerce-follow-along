@@ -2,6 +2,26 @@ import React from 'react'
 
 const Addproduct = () => {
     const[noOfImages,setNoOfImages]=useState(new Array(1));
+    const[productDetails, setProductDetails] = useState({
+      name:"",
+      email:"",
+      passwords:""
+  });
+  const[productImages,setProductImages] = useState([]);
+  async function handleSubmit(e) {
+    try{
+        const {name, email, password} = productDetails;
+        if(!name|| !email || !password){
+            alert("Please fill all the fields");
+            return;
+        }
+
+    }catch(error){
+        console.log(error);
+        alert("Something went wrong while submitting data")
+
+    }
+  }
   return (
     <div>
       <form action="">
