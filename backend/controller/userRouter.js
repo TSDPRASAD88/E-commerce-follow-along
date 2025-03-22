@@ -1,82 +1,86 @@
-const express =require("express");
-const bcrypt =require("bcryptjs")
+const express = require("express");
+const userModel = require("../models/userModel");
+const bcrypt = require("bcryptjs");
+const { userImage } = require("../middleware/multer");
 
-const userRouter=express.Router();
+const userRouter = express.Router();
+const  jwt = require('jsonwebtoken');
 
-const uploadUSerImage=require("../middlewares/multer")
+userRouter.post("/signup", async (req, res) => {
+    try {
 
-const {userModel}=require("../models/userModel");
+        userImage.single("image")(req, res, async (err) => {
+            if (err) {
+                console.log(err)
+                return res.status(400).json({ message: "File upload error", error: err.message });
+            }
 
-userRouter.post("/signup",uploadUSerImage.single("image"),async(req,res)=>{
-    try{
-     const {name,email,password}=req.body;
-     if(name!="" || email!="" || password!=""){
-        return res.status(400).send({message:"All fields are required"});
-     }
+            const { name, email, password } = req.body;
 
-      const user=await userModel.findOne({email:email});
-      console.log(user);
-      if(user){
-        return res.status(200).send({message:"user already exist"});
-      }
+            if (!name || !email || !password) {
+                return res.status(400).json({ message: "All details are required" });
+            }
 
-      const salt = bcrypt.genSaltSync(10);
-      const hash = bcrypt.hashSync(password, salt);
-      
-      const newUser=await userModel.insertOne({name,email,password:hash});
+            const userExists = await userModel.findOne({ email });
+            if (userExists) {
+                return res.status(400).json({ message: "User Already Registered" });
+            }
 
-      return res.status(200).send({message:"user register successfully"});
+            // Hash password securely
+            const saltRounds = 10;
+            const hashedPassword = await bcrypt.hash(password, saltRounds);
 
-    }catch(error){
-        return res.status(500).send({message:"Something went wrong"});
+            // Handle image upload (if provided)
+            const imageUrl = req.file 
+                ? `http://localhost:8080/uploads/userImages/${req.file.filename}`
+                : null;
+
+            // Create user
+            const newUser = await userModel.create({ 
+                name, 
+                email, 
+                password: hashedPassword, 
+                image: imageUrl 
+            });
+            const token = jwt.sign({name:newUser.name,email:newUser.email,id:newUser.id },process.env.JWT_PASSWORD);
+            return res.status(201).json({ message: "User registered successfully", token:token });
+        });
+    } catch (error) {
+        console.error("Signup Error:", error);
+        return res.status(500).json({ error: "Internal Server Error" });
     }
-})
-
-
-// userModel.post("./login",async(req,res)=>{
-//     try{
-//       const {email,password}=req.body;
-//       if(email!="" || password!=""){
-//         return res.status(400).send({message:"All fields are required"});
-//      }
-
-
-//       const user=await userModel.findOne({email});
-//       const matchedPass= bcrypt.compareSync(password, hash); // true
-//       if(user && matchedPass){
-//         return res.status(200).send({message:"user logged successfully"});
-//       }
-//       return res.status(401).send({message:"Entered details are wrong"});
-      
-//     }catch(error){
-//        return res.status(500).send({message:"something went wrong"});
-//     }
-// })
-
-userRouter.post("/login", async (request, response) => { //corrected userRouter.post
-  try {
-    const { email, password } = request.body;
-    if (!email || !password) { // Corrected validation logic
-      return response.status(400).send({ msg: "All fields are required" });
-    }
-
-    const user = await userModel.findOne({ email }); // Corrected method name
-    if (!user) {
-      return response.status(401).send({ msg: "Entered details are wrong" }); // User not found
-    }
-
-    const matchedPass = bcrypt.compareSync(password, user.password); // Compare with stored hashed password
-
-    if (matchedPass) {
-      return response.status(200).send({ msg: "User logged in successfully" });
-    }
-    return response.status(401).send({ msg: "Entered details are wrong" }); // Password mismatch
-  } catch (error) {
-    console.error("Login error:", error); // Log the error for debugging
-    return response.status(500).send({ msg: "Something went wrong!" });
-  }
 });
 
+// Login Route
+userRouter.post("/login", async (req, res) => {
+    try {
+        const { email, password } = req.body;
 
+        if (!email || !password) {
+            return res.status(400).json({ message: "All details are required" });
+        }
 
-module.exports=userRouter;
+        const user = await userModel.findOne({ email });
+
+        if (!user) {
+            return res.status(401).json({ message: "Invalid email or password" });
+        }
+
+        // Corrected password comparison
+        const matchedPass = bcrypt.compareSync(password, user.password);
+
+        if (matchedPass) {
+
+        const token = jwt.sign({name:user.name,email:user.email,id:user.id },process.env.JWT_PASSWORD);
+            return res.status(200).json({ message: "User logged in successfully",token:token });
+        } else {
+            return res.status(401).json({ message: "Invalid email or password" });
+        }
+
+    } catch (error) {
+        console.error("Login Error:", error);
+        return res.status(500).json({ error: "Internal Server Error" });
+    }
+});
+
+module.exports = userRouter;

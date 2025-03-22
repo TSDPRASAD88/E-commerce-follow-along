@@ -26,7 +26,7 @@ app.get('/',(req,res)=>{
 app.use("/user",userRouter)
 
 
-app.listen(8000,async()=>{
+app.listen(8080,async()=>{
     try{
       await connect();
       console.log('server is connected');
