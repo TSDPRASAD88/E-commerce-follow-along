@@ -87,3 +87,9 @@ During this session, we covered the basics of setting up a project repository an
 * created backend for specific user products.
 
 
+# Milestone 13
+
+   - created **product update endpoint** for updating products.
+   - created from for updating data in frontend and created autofill function.
+
+
