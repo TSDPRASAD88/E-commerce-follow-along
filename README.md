@@ -93,7 +93,11 @@ During this session, we covered the basics of setting up a project repository an
    - created from for updating data in frontend and created autofill function.
 
 
-Milestone 14: Created Product Delete**
+ # Milestone 14: Created Product Delete**
 
    - created**product delete Endpoint** for Updating products.
    - created from for Deleting product in frontend.
+
+
+   # Milestone 15:
+   - created *Navigation bar* for navigation pages
