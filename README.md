@@ -101,3 +101,9 @@ During this session, we covered the basics of setting up a project repository an
 
    # Milestone 15:
    - created *Navigation bar* for navigation pages
+
+
+   # Milestone 16  Created product Details page
+
+   - created *Product Details* for showing full product details in details page.
+   - Added add-to-cart button with quantity selection.
