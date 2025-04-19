@@ -134,3 +134,7 @@ During this session, we covered the basics of setting up a project repository an
    - Created route for Add address page in frontend.
    - Create form for adding address.
    - Started address using useState Hook.
+
+   # Milestone 22:Created backend for address and attached with frontend
+   - created backend endpoint for handling address
+   - added backend endpoint with frontend.
