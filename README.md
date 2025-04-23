@@ -130,7 +130,6 @@ During this session, we covered the basics of setting up a project repository an
 
 
    # Milestone 21 Created frontend for Address
-
    - Created route for Add address page in frontend.
    - Create form for adding address.
    - Started address using useState Hook.
@@ -140,7 +139,13 @@ During this session, we covered the basics of setting up a project repository an
    - added backend endpoint with frontend.
 
    # Milestone 23: worked on address on frontend and backend
-
    - Created place order button in cart page and added navigation to select address.
    - Created select address page and provided option to select one address.
    - Created backend end point to send all address to user.
+
+
+   # Milestone 24 Worked on address in frontend and backend
+   - Displayed all of products in cart.
+   - Displayed all address in address selection page.
+   - Displayed total price in the cart.
+   - Added place order button at the bottom.
