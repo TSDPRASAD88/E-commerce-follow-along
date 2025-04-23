@@ -138,3 +138,9 @@ During this session, we covered the basics of setting up a project repository an
    # Milestone 22:Created backend for address and attached with frontend
    - created backend endpoint for handling address
    - added backend endpoint with frontend.
+
+   # Milestone 23: worked on address on frontend and backend
+
+   - Created place order button in cart page and added navigation to select address.
+   - Created select address page and provided option to select one address.
+   - Created backend end point to send all address to user.
