@@ -149,3 +149,8 @@ During this session, we covered the basics of setting up a project repository an
    - Displayed all address in address selection page.
    - Displayed total price in the cart.
    - Added place order button at the bottom.
+
+   # Milestone 25 Worked on order backend and email service
+   - Created endpoint for order.
+   - Implemented mail service from nodemailer.
+   - Handled address for the delivery.
