@@ -160,3 +160,8 @@ During this session, we covered the basics of setting up a project repository an
    # Milestone 26 Worked on order backend and email service
    - Implemented mail with nodemailer.
    - Sending order details to user via mail.
+
+
+   # Milestone 27 Worked on frontend for my order page
+   - Created a get request to get for my orders.
+   
