@@ -165,3 +165,18 @@ During this session, we covered the basics of setting up a project repository an
    # Milestone 27 Worked on frontend for my order page
    - Created a get request to get for my orders.
    
+
+    ### **🛠️ Milestone 28 cancel order payment
+   - added cancel order functionality
+   - created endpoint for payemnt id
+
+
+  ### **🛠️ Milestone 29 Payment
+   -  Integrated dummy payment.
+
+   ### **🛠️ Milestone 30 Payment
+   -  Worked on payment page.
+
+   ### **🛠️ Milestone 31 Redux Implementation
+    - Implemented redux in frontend.
+   - Used redux in user details page.
