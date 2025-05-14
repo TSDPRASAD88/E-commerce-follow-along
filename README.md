@@ -183,3 +183,7 @@ During this session, we covered the basics of setting up a project repository an
 
     ### **🛠️ Milestone 32: Redux Implementation
     - Implemented redux in frontend.
+
+   ### **🛠️ Milestone 33  implementing redux
+   - Implemeted cookies auth by using cookie-parser npm package.
+   - Added cookie by login page.
