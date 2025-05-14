@@ -180,3 +180,6 @@ During this session, we covered the basics of setting up a project repository an
    ### **🛠️ Milestone 31 Redux Implementation
     - Implemented redux in frontend.
    - Used redux in user details page.
+
+    ### **🛠️ Milestone 32: Redux Implementation
+    - Implemented redux in frontend.
